@@ -1,0 +1,641 @@
+$date
+	Mon Sep 25 19:20:51 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module riscv_tb $end
+$var reg 1 ! clk $end
+$var reg 1 " enable $end
+$var reg 1 # rst $end
+$scope module u_riscv $end
+$var wire 1 ! clk $end
+$var wire 1 " enable $end
+$var wire 1 # rst $end
+$var wire 4 $ wrapmasking [3:0] $end
+$var wire 32 % uj_imme [31:0] $end
+$var wire 1 & store $end
+$var wire 32 ' s_imme [31:0] $end
+$var wire 32 ( rs2 [31:0] $end
+$var wire 2 ) rs1_sel [1:0] $end
+$var wire 32 * rs1 [31:0] $end
+$var wire 32 + res [31:0] $end
+$var wire 1 , reg_write $end
+$var wire 2 - rd_sel [1:0] $end
+$var wire 32 . rd_o [31:0] $end
+$var wire 32 / out [31:0] $end
+$var wire 32 0 op_b [31:0] $end
+$var wire 1 1 mem_write $end
+$var wire 1 2 load $end
+$var wire 1 3 jalr $end
+$var wire 1 4 jal $end
+$var wire 32 5 instr_out [31:0] $end
+$var wire 3 6 imme_sel [2:0] $end
+$var wire 32 7 i_imme [31:0] $end
+$var wire 32 8 data_out_s [31:0] $end
+$var wire 32 9 data_out_l [31:0] $end
+$var wire 32 : data_mem_out [31:0] $end
+$var wire 32 ; data [31:0] $end
+$var wire 1 < branchsignal $end
+$var wire 1 = branch $end
+$var wire 32 > b_imme [31:0] $end
+$var wire 4 ? alu_controller [3:0] $end
+$var wire 32 @ address_out [31:0] $end
+$scope module u_alu $end
+$var wire 32 A rs2 [31:0] $end
+$var wire 32 B rs1 [31:0] $end
+$var wire 4 C op [3:0] $end
+$var reg 32 D out [31:0] $end
+$upscope $end
+$scope module u_alu_mux $end
+$var wire 32 E uj_imme [31:0] $end
+$var wire 32 F s_imme [31:0] $end
+$var wire 32 G rs2 [31:0] $end
+$var wire 3 H imme_sel [2:0] $end
+$var wire 32 I i_imme [31:0] $end
+$var wire 32 J b_imme [31:0] $end
+$var reg 32 K op_b [31:0] $end
+$upscope $end
+$scope module u_alu_mux2 $end
+$var wire 2 L rs_sel [1:0] $end
+$var wire 32 M rs1 [31:0] $end
+$var wire 32 N pc_out [31:0] $end
+$var reg 32 O res [31:0] $end
+$upscope $end
+$scope module u_branch $end
+$var wire 3 P func_3 [2:0] $end
+$var wire 32 Q rs2 [31:0] $end
+$var wire 32 R rs1 [31:0] $end
+$var wire 1 = bena $end
+$var reg 1 < branchsignal $end
+$upscope $end
+$scope module u_datamem $end
+$var wire 8 S address [7:0] $end
+$var wire 1 ! clk $end
+$var wire 1 & store $end
+$var wire 4 T masking [3:0] $end
+$var wire 1 2 load $end
+$var wire 32 U data_mem_in [31:0] $end
+$var reg 32 V data_mem_out [31:0] $end
+$upscope $end
+$scope module u_immediate_generator $end
+$var wire 32 W inst [31:0] $end
+$var reg 32 X b_imme [31:0] $end
+$var reg 32 Y i_imme [31:0] $end
+$var reg 32 Z s_imme [31:0] $end
+$var reg 32 [ uj_imme [31:0] $end
+$upscope $end
+$scope module u_instructionmemory $end
+$var wire 8 \ address [7:0] $end
+$var wire 1 ! clk $end
+$var wire 32 ] data_in [31:0] $end
+$var wire 1 " enable $end
+$var reg 32 ^ data_out [31:0] $end
+$upscope $end
+$scope module u_pc $end
+$var wire 32 _ address_in [31:0] $end
+$var wire 32 ` aluout [31:0] $end
+$var wire 1 < branchsignal $end
+$var wire 1 ! clk $end
+$var wire 1 # rst $end
+$var wire 1 3 jalr $end
+$var wire 1 4 jal $end
+$var wire 1 = branch $end
+$var reg 32 a address_out [31:0] $end
+$upscope $end
+$scope module u_rd_mux $end
+$var wire 32 b alu_o [31:0] $end
+$var wire 32 c pc_o [31:0] $end
+$var wire 2 d rd_select [1:0] $end
+$var reg 32 e rd_o [31:0] $end
+$upscope $end
+$scope module u_regfile $end
+$var wire 1 ! clk $end
+$var wire 5 f rd_add [4:0] $end
+$var wire 5 g rs1_add [4:0] $end
+$var wire 5 h rs2_add [4:0] $end
+$var wire 1 # rst $end
+$var wire 1 , reg_enable $end
+$var wire 32 i data_i [31:0] $end
+$var reg 32 j i [31:0] $end
+$var reg 32 k rs1 [31:0] $end
+$var reg 32 l rs2 [31:0] $end
+$upscope $end
+$scope module u_regfile_mux $end
+$var wire 32 m data_alu_out [31:0] $end
+$var wire 1 2 load $end
+$var wire 32 n data_reg_l [31:0] $end
+$var reg 32 o data [31:0] $end
+$upscope $end
+$scope module u_top_controller $end
+$var wire 32 p inst [31:0] $end
+$var wire 1 & store $end
+$var wire 2 q rs1_sel [1:0] $end
+$var wire 1 , reg_write $end
+$var wire 2 r rd_sel [1:0] $end
+$var wire 1 s r_type $end
+$var wire 1 1 mem_write $end
+$var wire 1 2 load $end
+$var wire 1 3 jalr $end
+$var wire 1 4 jal $end
+$var wire 3 t imme_sel [2:0] $end
+$var wire 1 u i_type $end
+$var wire 1 = branch $end
+$var wire 4 v alu_controller [3:0] $end
+$scope module u_alu_control $end
+$var wire 3 w func3 [2:0] $end
+$var wire 1 x func7 $end
+$var wire 1 & store $end
+$var wire 1 s r_type $end
+$var wire 1 2 load $end
+$var wire 1 4 jal $end
+$var wire 1 u i_type $end
+$var wire 1 = branch $end
+$var reg 4 y alu_controller [3:0] $end
+$upscope $end
+$scope module u_controller $end
+$var wire 1 & store $end
+$var wire 1 s r_type $end
+$var wire 1 2 load $end
+$var wire 1 3 jalr $end
+$var wire 1 4 jal $end
+$var wire 1 u i_type $end
+$var wire 1 = branch $end
+$var reg 3 z imme_sel [2:0] $end
+$var reg 1 1 mem_write $end
+$var reg 2 { rd_sel [1:0] $end
+$var reg 1 , reg_write $end
+$var reg 2 | rs1_sel [1:0] $end
+$upscope $end
+$scope module u_typedecode $end
+$var wire 7 } opcode [6:0] $end
+$var reg 1 = branch $end
+$var reg 1 u i_type $end
+$var reg 1 4 jal $end
+$var reg 1 3 jalr $end
+$var reg 1 2 load $end
+$var reg 1 s r_type $end
+$var reg 1 & store $end
+$upscope $end
+$upscope $end
+$scope module u_wrapper $end
+$var wire 2 ~ byte_address [1:0] $end
+$var wire 32 !" data_in_l [31:0] $end
+$var wire 32 "" data_in_s [31:0] $end
+$var wire 3 #" func3 [2:0] $end
+$var wire 1 2 load $end
+$var wire 1 & store $end
+$var reg 32 $" data_out_l [31:0] $end
+$var reg 32 %" data_out_s [31:0] $end
+$var reg 4 &" wrapmasking [3:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx &"
+bx %"
+bx $"
+bx #"
+bx ""
+bx !"
+bx ~
+bx }
+bx |
+bx {
+bx z
+bx y
+xx
+bx w
+bx v
+xu
+bx t
+xs
+bx r
+bx q
+bx p
+bx o
+bx n
+bx m
+bx l
+bx k
+bx j
+bx i
+bx h
+bx g
+bx f
+bx e
+bx d
+bx c
+bx b
+bx a
+bx `
+b0 _
+bx ^
+bz ]
+bx \
+bx [
+bx Z
+bx Y
+bx X
+bx W
+bx V
+bx U
+bx T
+bx S
+bx R
+bx Q
+bx P
+bx O
+bx N
+bx M
+bx L
+bx K
+bx J
+bx I
+bx H
+bx G
+bx F
+bx E
+bx D
+bx C
+bx B
+bx A
+bx @
+bx ?
+bx >
+x=
+x<
+bx ;
+bx :
+bx 9
+bx 8
+bx 7
+bx 6
+bx 5
+x4
+x3
+x2
+x1
+bx 0
+bx /
+bx .
+bx -
+x,
+bx +
+bx *
+bx )
+bx (
+bx '
+x&
+bx %
+bx $
+0#
+x"
+0!
+$end
+#5000
+b1 .
+b1 e
+b1 ;
+b1 i
+b1 o
+b1 ~
+b0 S
+b1 /
+b1 D
+b1 `
+b1 b
+b1 m
+b1 0
+b1 A
+b1 K
+b0 ?
+b0 C
+b0 v
+b0 y
+b1 6
+b1 H
+b1 t
+b1 z
+b0 )
+b0 L
+b0 q
+b0 |
+b0 -
+b0 d
+b0 r
+b0 {
+1,
+01
+b0 +
+b0 B
+b0 O
+03
+04
+0=
+02
+0&
+1u
+0s
+b0 (
+b0 G
+b0 Q
+b0 l
+b0 ""
+b0 *
+b0 M
+b0 R
+b0 k
+b10011 }
+b0 w
+0x
+b0 #"
+b0 P
+b1 h
+b0 g
+b10 f
+b100000000000 %
+b100000000000 E
+b100000000000 [
+b10 >
+b10 J
+b10 X
+b10 '
+b10 F
+b10 Z
+b1 7
+b1 I
+b1 Y
+b100000000000100010011 5
+b100000000000100010011 W
+b100000000000100010011 ^
+b100000000000100010011 p
+b0 \
+b0 @
+b0 N
+b0 a
+b0 c
+b100000 j
+1!
+#10000
+0!
+0"
+1#
+#15000
+b100 +
+b100 B
+b100 O
+b1000 .
+b1000 e
+b10000 ;
+b10000 i
+b10000 o
+b0 ~
+b100 S
+b10 )
+b10 L
+b10 q
+b10 |
+b1 -
+b1 d
+b1 r
+b1 {
+b101 6
+b101 H
+b101 t
+b101 z
+1,
+b10000 /
+b10000 D
+b10000 `
+b10000 b
+b10000 m
+14
+0u
+b1100 0
+b1100 A
+b1100 K
+b1101111 }
+b1100 h
+b1010 f
+b1100 %
+b1100 E
+b1100 [
+b1010 >
+b1010 J
+b1010 X
+b1010 '
+b1010 F
+b1010 Z
+b1100 7
+b1100 I
+b1100 Y
+b110000000000010101101111 5
+b110000000000010101101111 W
+b110000000000010101101111 ^
+b110000000000010101101111 p
+b1 \
+b100 @
+b100 N
+b100 a
+b100 c
+1!
+#20000
+0!
+#25000
+b1 ~
+b0 6
+b0 H
+b0 t
+b0 z
+b0 )
+b0 L
+b0 q
+b0 |
+b0 -
+b0 d
+b0 r
+b0 {
+1,
+1s
+04
+b1 *
+b1 M
+b1 R
+b1 k
+b0 0
+b0 A
+b0 K
+b110011 }
+b100 h
+b10 g
+b11 f
+b10000000000000100 %
+b10000000000000100 E
+b10000000000000100 [
+b100000000010 >
+b100000000010 J
+b100000000010 X
+b11 '
+b11 F
+b11 Z
+b100 7
+b100 I
+b100 Y
+b1 ;
+b1 i
+b1 o
+b0 S
+b10000010000000110110011 5
+b10000010000000110110011 W
+b10000010000000110110011 ^
+b10000010000000110110011 p
+b1 /
+b1 D
+b1 `
+b1 b
+b1 m
+b100 \
+b1 +
+b1 B
+b1 O
+b1 .
+b1 e
+b10000 @
+b10000 N
+b10000 a
+b10000 c
+1!
+#30000
+0!
+#35000
+b10100 ;
+b10100 i
+b10100 o
+b0 ~
+b101 S
+b11000 .
+b11000 e
+b100 0
+b100 A
+b100 K
+b10100 /
+b10100 D
+b10100 `
+b10100 b
+b10100 m
+b1 -
+b1 d
+b1 r
+b1 {
+b1 6
+b1 H
+b1 t
+b1 z
+1,
+b10000 +
+b10000 B
+b10000 O
+13
+0s
+b10000 *
+b10000 M
+b10000 R
+b10000 k
+b1100111 }
+b1010 g
+b1 f
+b1010000000000000100 %
+b1010000000000000100 E
+b1010000000000000100 [
+b100000000000 >
+b100000000000 J
+b100000000000 X
+b1 '
+b1 F
+b1 Z
+b10001010000000011100111 5
+b10001010000000011100111 W
+b10001010000000011100111 ^
+b10001010000000011100111 p
+b101 \
+b10100 @
+b10100 N
+b10100 a
+b10100 c
+1!
+#40000
+0!
+#45000
+1!
+#50000
+0!
+#55000
+1!
+#60000
+0!
+#65000
+1!
+#70000
+0!
+#75000
+1!
+#80000
+0!
+#85000
+1!
+#90000
+0!
+#95000
+1!
+#100000
+0!
+#105000
+1!
+#110000
+0!
+#115000
+1!
+#120000
+0!
+#125000
+1!
+#130000
+0!
+#135000
+1!
+#140000
+0!
+#145000
+1!
+#150000
+0!
+#155000
+1!
+#160000
+0!
+#165000
+1!
+#170000
+0!
+#175000
+1!
+#180000
+0!
+#185000
+1!
+#190000
+0!
+#195000
+1!
+#200000
+0!
+#205000
+1!
+#210000
+0!
