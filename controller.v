@@ -6,9 +6,12 @@ module controller (
     input wire load,
     input wire jal,
     input wire jalr,
+<<<<<<< HEAD
     input wire auipc,
     input wire lui,
 
+=======
+>>>>>>> fd1ce303ca5ee1c79a9a8170700a0c8db2cd483b
     output reg mem_write,
     output reg reg_write,
   
@@ -81,6 +84,7 @@ module controller (
             end
         endcase
         
+<<<<<<< HEAD
 
         case (auipc)
             1'b1: begin
@@ -99,6 +103,8 @@ module controller (
             end
         endcase
         
+=======
+>>>>>>> fd1ce303ca5ee1c79a9a8170700a0c8db2cd483b
     end
 
 endmodule

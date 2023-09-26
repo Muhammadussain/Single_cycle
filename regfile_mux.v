@@ -1,10 +1,14 @@
 module regfile_mux (
     input wire [31:0] data_alu_out,
     input wire [31:0] data_reg_l,
+<<<<<<< HEAD
     input wire [31:0] pc_o,
     input wire [1:0] rd_select,
     input wire load,
     input wire [31:0]lui_imme,
+=======
+    input wire load,
+>>>>>>> fd1ce303ca5ee1c79a9a8170700a0c8db2cd483b
     output reg [31:0] data
 );
       
@@ -13,6 +17,7 @@ module regfile_mux (
         data=data_reg_l;
 
        end
+<<<<<<< HEAD
       
         if (rd_select==2'b01)
              begin
@@ -38,3 +43,9 @@ module regfile_mux (
        
 //     end
 // endmodule
+=======
+       else
+       data=data_alu_out;
+    end
+endmodule
+>>>>>>> fd1ce303ca5ee1c79a9a8170700a0c8db2cd483b

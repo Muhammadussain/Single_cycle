@@ -36,7 +36,10 @@ wire load;
 wire store;
 wire [31:0] s_imme;
 wire [31:0] i_imme;
+<<<<<<< HEAD
 wire [31:0] u_imme;
+=======
+>>>>>>> fd1ce303ca5ee1c79a9a8170700a0c8db2cd483b
 wire [31:0] uj_imme;
 wire [31:0] b_imme;
 wire [31:0] data;
@@ -114,7 +117,10 @@ immediate_generator u_immediate_generator(
     .s_imme(s_imme),
     .i_imme(i_imme),
     .uj_imme(uj_imme),
+<<<<<<< HEAD
     .u_imme(u_imme),
+=======
+>>>>>>> fd1ce303ca5ee1c79a9a8170700a0c8db2cd483b
     .b_imme(b_imme)
 );
 
@@ -122,9 +128,12 @@ regfile_mux u_regfile_mux (
     .data_alu_out(out),
     .data_reg_l(data_out_l),
     .load(load),
+<<<<<<< HEAD
     .lui_imme(u_imme),
     .pc_o(address_out),
     .rd_select(rd_sel),
+=======
+>>>>>>> fd1ce303ca5ee1c79a9a8170700a0c8db2cd483b
     .data(data)
 
 );
@@ -144,7 +153,10 @@ alu_mux u_alu_mux(
     .imme_sel(imme_sel),
     .rs2(rs2),
     .uj_imme(uj_imme),
+<<<<<<< HEAD
     .u_imme(u_imme),
+=======
+>>>>>>> fd1ce303ca5ee1c79a9a8170700a0c8db2cd483b
     .i_imme(i_imme),
     .b_imme(b_imme),
     .s_imme(s_imme),
@@ -165,12 +177,21 @@ alu u_alu (
     .op(alu_controller[3:0]),
     .out(out)
 );
+<<<<<<< HEAD
 // rd_mux u_rd_mux(
 //     .alu_o(out),
 //     .pc_o(address_out),
 //     .rd_select(rd_sel),
 //     .rd_o(rd_o)
 // );
+=======
+rd_mux u_rd_mux(
+    .alu_o(out),
+    .pc_o(address_out),
+    .rd_select(rd_sel),
+    .rd_o(rd_o)
+);
+>>>>>>> fd1ce303ca5ee1c79a9a8170700a0c8db2cd483b
 branch u_branch(
     .rs1(rs1),
     .rs2(rs2),
