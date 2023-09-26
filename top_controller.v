@@ -11,6 +11,9 @@ module top_controller(
     output wire branch,
     output wire jal,
     output wire jalr,
+    output wire lui,
+    output wire auipc,
+
      output wire [1:0] rd_sel,
     output wire [1:0] rs1_sel,
 
@@ -30,6 +33,8 @@ typedecode u_typedecode(
     .branch(branch),
     .load(load),
     .jal(jal),
+    .auipc(auipc),
+    .lui(lui),
     .jalr(jalr)
 
 
@@ -44,6 +49,8 @@ controller u_controller(
     .branch(branch),
     .load(load),
     .jal(jal),
+    .lui(lui),
+    .auipc(auipc),
     .jalr(jalr),
     .rd_sel(rd_sel),
      .rs1_sel(rs1_sel),
@@ -58,6 +65,8 @@ alu_control u_alu_control (
     .store(store),
     .load(load),
     .jal(jal),
+    .auipc(auipc),
+    .lui(lui),
     .branch(branch),
    .func3(inst[14:12]),
     .func7(inst[30]),

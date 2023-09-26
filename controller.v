@@ -6,6 +6,9 @@ module controller (
     input wire load,
     input wire jal,
     input wire jalr,
+    input wire auipc,
+    input wire lui,
+
     output reg mem_write,
     output reg reg_write,
   
@@ -75,6 +78,24 @@ module controller (
                rd_sel=2'b01;
                 reg_write = 1;
                rs1_sel=2'b00;
+            end
+        endcase
+        
+
+        case (auipc)
+            1'b1: begin
+              imme_sel=3'b100;
+               rd_sel=2'b00;
+                reg_write = 1;
+               rs1_sel=2'b01;
+            end
+            endcase
+        case (lui)
+            1'b1: begin
+              imme_sel=3'b100;
+               rd_sel=2'b10;
+                reg_write = 1;
+               rs1_sel=2'b01;
             end
         endcase
         

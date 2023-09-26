@@ -13,7 +13,7 @@ always @(*) begin
         res=pc_out;
 
     end
-    if(rs_sel==2'b00)begin
+    else if(rs_sel==2'b00)begin
         res=rs1;
     end
     else if(rs_sel==2'b10)begin

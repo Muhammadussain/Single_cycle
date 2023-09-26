@@ -6,6 +6,8 @@ module alu_control (
     input wire load,
     input wire branch,
     input wire jal,
+    input wire lui,
+    input wire auipc,
     input wire [2:0] func3,
     input wire func7,
     output reg [3:0] alu_controller
@@ -45,6 +47,12 @@ always @(*) begin
         alu_controller = 4'b0000;
     end
      else if (jal) begin
+        alu_controller = 4'b0000;
+    end
+     else if (lui) begin
+        alu_controller = 4'b0000;
+    end
+     else if (auipc) begin
         alu_controller = 4'b0000;
     end
     

@@ -6,6 +6,8 @@ module typedecode(
     output reg branch,
     output reg jal,
     output reg jalr, 
+    output reg auipc, 
+    output reg lui, 
     output reg load
 );
 always @(*) begin
@@ -16,6 +18,8 @@ always @(*) begin
         branch = 0;
         jal = 0;
         jalr = 0;
+        lui = 0;
+        auipc = 0;
 
         if (opcode == 7'b0110011)
             r_type = 1;
@@ -31,6 +35,10 @@ always @(*) begin
             jal = 1;
         else if (opcode == 7'b1100111)
             jalr = 1;
+        else if (opcode == 7'b0010111)
+            auipc = 1;
+        else if (opcode == 7'b0110111)
+            lui = 1;
     end
     // r_type = 0;
     // i_type = 0;
