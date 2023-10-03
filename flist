@@ -1,0 +1,16 @@
+top_controller.v
+imme.v
+regfile.v
+alu.v
+pc.v
+datamemory.v
+instruction_mem.v
+wrapper.v
+alu_mux.v
+alu_mux2.v
+branch.v
+regfile_mux.v
+typedecode.v
+riscv.v
+alu_controller.v
+controller.v
