@@ -1,17 +1,3 @@
-`include "top_controller.v"
-`include "imme.v"
-`include "regfile.v"
-`include "alu.v"
-`include "pc.v"
-`include "datamemory.v"
-`include "instruction_mem.v"
-`include "wrapper.v"
-`include "alu_mux.v"
-`include "alu_mux2.v"
-`include "branch.v"
-// `include "rd_mux.v"
-`include "regfile_mux.v"
-
 module riscv(
     input wire rst,
     input wire clk,
