@@ -10,19 +10,19 @@ module controller (
     input wire lui,
     output reg mem_write,
     output reg reg_write,
-  
+    output reg we_re,
     output reg [2:0] imme_sel,
     output reg [1:0] rd_sel,
     output reg [1:0] rs1_sel
 );
 
     always @(*) begin
-        mem_write = 0;
-        reg_write = 0;
+        mem_write = 1'b0;
+        reg_write = 1'b0;
          rd_sel=2'b00;
          rs1_sel=2'b00;
         imme_sel = 3'b000;
-
+        we_re=1'b0;
        
         case (r_type)
             1'b1: begin
@@ -35,6 +35,7 @@ module controller (
             1'b1: begin
                 reg_write = 1;
                imme_sel=3'b001;
+               we_re=1'b1;
             end
         endcase
 
@@ -50,6 +51,7 @@ module controller (
                 reg_write = 1;
                 mem_write = 1;
                 imme_sel = 3'b011;
+                we_re=1'b0;
             end
         endcase
 
